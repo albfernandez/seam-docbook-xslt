@@ -1,91 +1,173 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-   <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-   <groupId>org.jboss.seam</groupId>
-   <artifactId>seam-docbook-xslt</artifactId>
-   <packaging>jar</packaging>
-   <version>1.1.1-SNAPSHOT</version>
+	<groupId>com.github.albfernandez.seam</groupId>
+	<artifactId>seam-docbook-xslt</artifactId>
+	<packaging>jar</packaging>
+	<version>1.1.1</version>
 
-   <name>SeamFramework.org DocBook XSLT</name>
-   <description>
+	<name>SeamFramework.org DocBook XSLT</name>
+	<description>
       The main project to transform DocBook XML into XHTML and other formats for
       SeamFramework.org Documentation.
    </description>
-   <url>http://www.seamframework.org</url>
+	<url>https://github.com/albfernandez/seam-docbook-xslt</url>
+	<licenses>
+		<license>
+			<name>GNU LESSER GENERAL PUBLIC LICENSE, version 3 (LGPL-3.0)</name>
+			<url>http://www.gnu.org/licenses/lgpl.txt</url>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>Alberto Fernández</name>
+			<email>infjaf@gmail.com</email>
+			<organization>Alberto Fernández</organization>
+			<organizationUrl>https://github.com/albfernandez/</organizationUrl>
+		</developer>
+	</developers>
+	<contributors>
+		<contributor>
+			<name>Pete Muir</name>
+		</contributor>
+		<contributor>
+			<name>Mark Newton</name>
+		</contributor>
+	</contributors>
+	<scm>
+		<developerConnection>scm:git:git@github.com:albfernandez/seam-docbook-xslt.git</developerConnection>
+		<connection>scm:git:git@github.com:albfernandez/seam-docbook-xslt.git</connection>
+		<url>https://github.com/albfernandez/seam-docbook-xslt</url>
+	</scm>
+	<issueManagement>
+		<system>GitHub</system>
+		<url>https://github.com/albfernandez/seam-docbook-xslt/issues</url>
+	</issueManagement>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
 
-   <scm>
-      <developerConnection>scm:svn:https://svn.jboss.org/repos/seam/maven-plugins/trunk</developerConnection>
-      <connection>scm:svn:http://anonsvn.jboss.org/repos/seam/maven-plugins/trunk</connection>
-      <url>http://fisheye.jboss.org/browse/Seam/maven-plugins/trunk</url>
-   </scm>
-   
-   <contributors>
-      <contributor>
-         <name>Pete Muir</name>
-      </contributor>
-      <contributor>
-         <name>Mark Newton</name>
-      </contributor>
-   </contributors>
 
-   <repositories>
-      <repository>
-         <id>repository.jboss.org</id>
-         <name>JBoss Repository</name>
-         <url>http://repository.jboss.org/maven2</url>
-      </repository>
-   </repositories>
+	<repositories>
+		<repository>
+			<id>repository.jboss.org</id>
+			<name>JBoss Repository</name>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+	</repositories>
 
-   <dependencies>
-      <dependency>
-         <groupId>org.jboss</groupId>
-         <artifactId>jbossorg-docbook-xslt</artifactId>
-      </dependency>
-   </dependencies>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss</groupId>
+			<artifactId>jbossorg-docbook-xslt</artifactId>
+		</dependency>
+	</dependencies>
 
-   <dependencyManagement>
-      <dependencies>
-         <dependency>
-            <groupId>org.jboss</groupId>
-            <artifactId>jbossorg-docbook-xslt</artifactId>
-            <version>1.1.0</version>
-         </dependency>
-      </dependencies>
-   </dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss</groupId>
+				<artifactId>jbossorg-docbook-xslt</artifactId>
+				<version>1.1.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-   <build>
-      <extensions>
-         <extension>
-            <groupId>org.apache.maven.wagon</groupId>
-            <artifactId>wagon-webdav</artifactId>
-            <version>1.0-beta-2</version>
-         </extension>
-      </extensions>
-      <pluginManagement>
-         <plugins>
-            <plugin>
-               <groupId>org.jboss.maven.plugins</groupId>
-               <artifactId>maven-jdocbook-plugin</artifactId>
-               <version>2.1.1</version>
-            </plugin>
-         </plugins>
-      </pluginManagement>
-   </build>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.jboss.maven.plugins</groupId>
+					<artifactId>maven-jdocbook-plugin</artifactId>
+					<version>2.1.1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.2</version>
+				<configuration>
+					<archive>
+						<manifestEntries>
+							<Automatic-Module-Name>com.github.albfernandez.javadbf</Automatic-Module-Name>
+						</manifestEntries>
+						<manifest>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<configuration>
+					<keyname>${gpg.keyname}</keyname>
+					<passphraseServerId>${gpg.keyname}</passphraseServerId>
+				</configuration>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>1.6.8</version>
+				<extensions>true</extensions>
+				<configuration>
+					<serverId>ossrh</serverId>
+					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
-   <distributionManagement>
-      <repository>
-         <!-- Copy the dist to the local checkout of the JBoss maven2 repo ${maven.repository.root} -->
-         <!-- It is anticipated that ${maven.repository.root} be set in user's settings.xml -->
-         <!-- todo : replace this with direct svn access once the svnkit providers are available -->
-         <id>repository.jboss.org</id>
-         <url>file://${maven.repository.root}</url>
-      </repository>
-      <snapshotRepository>
-         <id>snapshots.jboss.org</id>
-         <name>JBoss Snapshot Repository</name>
-         <url>dav:https://snapshots.jboss.org/maven2</url>
-      </snapshotRepository>
-   </distributionManagement>
+
 
 </project>
