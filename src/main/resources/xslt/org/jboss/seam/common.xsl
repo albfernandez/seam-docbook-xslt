@@ -13,9 +13,9 @@
   <!-- XHTML settings -->
   <xsl:param name="html.stylesheet" select="'css/seamframework.css'"/>
      
-  <xsl:param name="siteHref" select="'http://www.seamframework.org'"/>
-  <xsl:param name="docHref" select="'http://www.seamframework.org/Documentation'"/>
-  <xsl:param name="siteLinkText" select="'SeamFramework.org'"/>
+  <xsl:param name="siteHref" select="'https://github.com/albfernandez/jboss-seam'"/>
+  <xsl:param name="docHref" select="'https://albfernandez.github.io/jboss-seam/'"/>
+  <xsl:param name="siteLinkText" select="'Seam Framework'"/>
   
   <!-- XHTML and PDF --> 
   <xsl:param name="callout.graphics.path">
